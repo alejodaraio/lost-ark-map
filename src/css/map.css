@@ -1,0 +1,121 @@
+#map {
+    height: 100vh;
+    width: 100vw;
+    background: rgb(19, 23, 26);
+    z-index: 1;
+}
+
+#modal-map {
+    position: fixed;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background: rgb(19, 23, 26, 0.9);
+    z-index: 100;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition:visibility 0.3s linear,opacity 0.3s linear;
+}
+
+#modal-map.opened {
+    visibility: visible;
+    opacity: 1;
+}
+
+#modal-map .svg-icon.close {
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    z-index: 200;
+}
+
+.svg-icon.close {
+    color: #fff;
+    font-size: 20px;
+}
+
+.leaflet-div-icon {
+    background: transparent;
+    border: 0;
+}
+
+.map-marker-zone, 
+.map-marker-island, 
+.map-marker-island-pvp, 
+.map-marker-normal, 
+.map-marker-icon, 
+.map-marker-story, 
+.map-marker-ingredient {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    vertical-align: top;
+    text-align: center;
+}
+
+.map-marker-zone div {
+    color: #f3c05e;
+    text-shadow: -1px 3px 5px #000;
+    white-space: nowrap;
+}
+
+.map-marker-island div {
+    color: #fff;
+    text-shadow: 1px 1px #000;
+    white-space: nowrap;
+}
+
+.map-marker-island-pvp div {
+    color: rgb(168, 10, 44);
+    text-shadow: 1px 1px #000;
+    white-space: nowrap;
+}
+
+.map-marker-icon div {
+    color: #fff;
+    text-shadow: 1px 1px #000;
+    white-space: nowrap; 
+}
+
+.map-marker-story, .map-marker-astory, .map-marker-ingredient {
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+}
+
+.map-marker-story div {
+    color: rgb(14, 138, 3);
+    text-shadow: 1px 1px #000;
+    white-space: nowrap; 
+}
+
+.map-marker-astory div {
+    color: rgb(156, 7, 7);
+    text-shadow: 1px 1px #000;
+    white-space: nowrap; 
+}
+
+.map-marker-ingredient div {
+    color: rgb(199, 99, 60);
+    text-shadow: 1px 1px #000;
+    white-space: nowrap; 
+}
+
+.leaflet-control-layers {
+    background: #333333;
+}
+
+.leaflet-control-layers-toggle {
+    background-image: url("https://lostarkmap.s3.us-west-1.amazonaws.com/map/assets/filter.png");
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: 33px;
+}
+
+.leaflet-control-layers-expanded .leaflet-control-layers-list {
+	min-width: 200px;
+    color: #fff;
+}
