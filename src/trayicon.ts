@@ -1,12 +1,9 @@
 import { Tray, Menu, App } from 'electron';
 import * as path from 'path';
 
-
-declare const __static: string;
-
 const trayIcon = (app: App): Tray => {
     let tray: Tray;
-    const iconPath = path.join(__static, './assets/favicon.ico');
+    const iconPath = path.join(__dirname, '../../src/assets/favicon.ico');
     tray = new Tray(iconPath);
 
     const contextMenu = Menu.buildFromTemplate([
