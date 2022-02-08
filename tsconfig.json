@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "target": "es2020",
     "allowJs": true,
     "module": "commonjs",
     "skipLibCheck": true,
@@ -10,6 +11,7 @@
     "outDir": "dist",
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "useDefineForClassFields":  true,
     "jsx": "react",
     "paths": {
       "*": ["node_modules/*"]

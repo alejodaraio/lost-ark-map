@@ -4,3 +4,74 @@ body {
   overflow: hidden;
   background: rgb(19, 23, 26);
 }
+
+.search-form {
+  position: absolute;
+  z-index: 999;
+  left: 40px;
+  top: 40px;
+  overflow: hidden;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.search-form input {
+  cursor: pointer;
+  height: 30px;
+  background: #333;
+  box-shadow: none;
+  border: 0;
+  padding: 5px 10px;
+  color: #fff;
+  border-radius: 6px;
+  width: 30px;
+  transition: width .3s ease-in-out;
+  border: 1px solid rgb(243, 170, 87);
+  background-image: url(https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_search_white_18px.svg);
+  background-position: 15px 10px;
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+}
+
+.search-form input:focus {
+  width: 300px;
+  padding-left: 60px;
+}
+
+.search-form input:not(:focus) {
+  width: 30px;
+}
+
+.search-results {
+  margin-top: 10px;
+  border-radius: 4px;
+  background: rgb(57, 67, 75);
+  width: 100%;
+}
+
+.search-results div {
+  padding: 16px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.search-results div:hover {
+  background: rgb(35, 41, 46);
+}
+
+
+.watermark {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  background-image: url("https://lostarkmap.s3.us-west-1.amazonaws.com/map/assets/logo.webp");
+  width: 100px;
+  height: 100px;
+  z-index: 999;
+  background-size: 100px;
+  opacity: 0.3;
+}

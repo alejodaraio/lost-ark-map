@@ -2,7 +2,7 @@
   "name": "lostarkmap",
   "productName": "lostarkmap",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "Lost Ark interactive map",
   "main": ".webpack/main",
   "scripts": {
     "start": "set ELECTRON_DISABLE_SECURITY_WARNINGS=true && set NODE_ENV=development && electron-forge start",
@@ -13,18 +13,34 @@
   },
   "keywords": [],
   "author": {
-    "name": "Alejo Daraio",
-    "email": "alejodaraio@gmail.com"
+    "name": "Cahos Gaming Corp"
   },
   "license": "MIT",
   "config": {
     "forge": {
       "packagerConfig": {},
+      "publishers": [
+        {
+          "name": "@electron-forge/publisher-github",
+          "platforms": [
+            "win32"
+          ],
+          "config": {
+            "repository": {
+              "owner": "alejodaraio",
+              "name": "lost-ark-map"
+            }
+          }
+        }
+      ],
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "lostarkmap"
+            "name": "LostArkMap",
+            "loadingGif": "src/assets/splash.png",
+            "setupIcon": "src/assets/favicon.ico",
+            "setupExe": "LostArkMap.exe"
           }
         },
         {
@@ -70,6 +86,7 @@
     "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
     "@electron-forge/maker-zip": "^6.0.0-beta.63",
     "@electron-forge/plugin-webpack": "^6.0.0-beta.63",
+    "@electron-forge/publisher-github": "^6.0.0-beta.63",
     "@types/leaflet": "^1.7.9",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
@@ -92,6 +109,7 @@
     "@reduxjs/toolkit": "^1.7.2",
     "@types/react-redux": "^7.1.22",
     "electron-squirrel-startup": "^1.0.0",
+    "fuse.js": "^6.5.3",
     "leaflet": "^1.7.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

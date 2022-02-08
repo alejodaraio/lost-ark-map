@@ -2,6 +2,8 @@ import { CRS } from "leaflet";
 import React from "react";
 import { MapContainer } from 'react-leaflet';
 import LayerManager from "./LayerManager";
+import Search from "./Search";
+import Watermak from "./Watermak";
 
 export default () => {
     return (
@@ -13,6 +15,8 @@ export default () => {
             zoomSnap={0.25}
         >
             <LayerManager />
+            <Search />
+            <Watermak />
         </MapContainer>
     )
 }
