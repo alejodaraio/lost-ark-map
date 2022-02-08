@@ -1,26 +1,34 @@
 import { divIcon, LatLng, PointExpression } from "leaflet";
-import React, { Fragment } from "react";
-import { Marker } from "react-leaflet";
+import React from "react";
+import { LayerGroup, LayersControl, Marker } from "react-leaflet";
 import IMarker, { IMarkerData } from "../interfaces/IMarker";
 
 export default (markers: Array<IMarker>) => {
-    return <Fragment>
+    return <LayersControl position="topright">
         {Object.keys(markers).map((key, index) => {
             const marker: IMarker = markers[index]
-            return marker.data.map(data => {
-                const position = new LatLng(data.coordinates[0], data.coordinates[1]);
-                return allowedMarkers(marker.markerType) && <Marker key={data.id + data.popupTitle} icon={MarkerIcon(marker, data)} position={position} />
-            })
+            return (
+                allowedMarkers(marker.markerType) && <LayersControl.Overlay key={`filter_${marker.markerType}`} checked name={markerTitle(marker.markerType)}>
+                    <LayerGroup>
+                        {marker.data.map(data => {
+                            const position = new LatLng(data.coordinates[0], data.coordinates[1]);
+                            return <Marker key={data.id + data.popupTitle} icon={MarkerIcon(marker, data)} position={position} />
+                        })}
+                    </LayerGroup>
+                </LayersControl.Overlay>
+            )
         })}
-    </Fragment>
+    </LayersControl>
 }
 
 const allowedMarkers = (marker: string) => {
     const markers = [
         'Mokoko',
+        'Affinity',
         'OGate',
         'EMarine',
         'Ghostship',
+        'SMerchant',
         'HStory',
         'AStory',
         'Food',
@@ -35,6 +43,31 @@ const allowedMarkers = (marker: string) => {
     ];
 
     return markers.includes(marker);
+}
+
+const markerTitle = (markerType: string) => {
+
+    const markers: any = {
+        'Mokoko': 'Mokoko',
+        'Affinity': 'Affinity',
+        'OGate': 'Gates',
+        'EMarine': 'Marine',
+        'Ghostship': 'Ghost ship',
+        'SMerchant': 'Merchant Ship',
+        'HStory': 'Hidden Story',
+        'AStory': 'Another Story',
+        'Food': 'Food',
+        'Ingredient': 'Ingredient',
+        'TMerchant': 'Merchant',
+        'Minuet': 'Minuet',
+        'Monster': 'Monster',
+        'SPassage': 'Secret Passage',
+        'Viewpoint': 'Vista',
+        'Resonance': 'Resonance',
+        'FBoss': 'Boss'
+    };
+
+    return markers[markerType]
 }
 
 const MarkerIcon = (marker: IMarker, data: IMarkerData) => {
