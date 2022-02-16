@@ -12,3 +12,11 @@ This is an interactive map as overlay to search faster everything.
 ### Resources
 
 - All assets used from https://papunika.com/map/?z=overworld&l=us
+
+
+### About it
+
+- React
+- Redux ToolKit
+- Electron.js
+- Electron Forge
