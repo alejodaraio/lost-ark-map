@@ -30,4 +30,4 @@ This is an interactive map as overlay to search faster everything.
 - Allowed do Fullscreen and resizable screen configuration.
 
 ###### Version 1.0.0
-- Fist Release
+- First Release
