@@ -1,6 +1,6 @@
 # Lost Ark Map
 
-This is an interactive map as overlay to search faster everything.
+This is an interactive map as overlay to search everything on Lost Ark World.
 
 ### Download
 - [Download Latest Release](https://github.com/alejodaraio/lost-ark-map/releases)
